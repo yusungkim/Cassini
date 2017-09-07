@@ -8,7 +8,12 @@
 
 import UIKit
 
-class CassiniViewController: UIViewController {
+class CassiniViewController: UIViewController, UISplitViewControllerDelegate {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.splitViewController?.delegate = self
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let url = DemoURL.NASA[segue.identifier ?? ""] {
@@ -17,6 +22,22 @@ class CassiniViewController: UIViewController {
                 imageVC.title = (sender as? UIButton)?.currentTitle
             }
         }
+    }
+    
+    func splitViewController(
+        _ splitViewController: UISplitViewController,
+        collapseSecondary secondaryViewController: UIViewController,
+        onto primaryViewController: UIViewController
+        ) -> Bool
+    {
+        if primaryViewController.contents == self {
+            if let imageVC = secondaryViewController.contents as? ImageViewController {
+                if imageVC.imageURL == nil {
+                    return true // I (cassini view controller) will do the collapse job, but actually I do nothing as result it is not going to collapse.
+                }
+            }
+        }
+        return false // You (split view controller) do it(collapse thing).
     }
 }
 

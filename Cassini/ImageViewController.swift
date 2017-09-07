@@ -33,6 +33,7 @@ class ImageViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +54,20 @@ class ImageViewController: UIViewController {
     // urlからデーターを読み込んで、image に入れる
     private func fetchImage() {
         if let url = imageURL {
-            let urlContent = try? Data(contentsOf: url)
-            if let imageData = urlContent {
-                image = UIImage(data: imageData)
+            
+            spinner.startAnimating()
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                let urlContent = try? Data(contentsOf: url)
+                
+                // this does beg the question, 
+                // what if I am not interested in this url when I get back from the Data()
+                if url == self?.imageURL { // if I am still interesting in the same url
+                    if let imageData = urlContent {
+                        DispatchQueue.main.async { // Do the UI things in main queue.
+                            self?.image = UIImage(data: imageData)
+                        }
+                    }
+                }
             }
         }
     }
@@ -72,6 +84,7 @@ class ImageViewController: UIViewController {
             scrollView?.maximumZoomScale = 2.0
             scrollView?.minimumZoomScale = 0.5
             scrollView?.contentSize = imageView.frame.size // outlets are not set, during preparing
+            spinner?.stopAnimating()
         }
     }
 }
