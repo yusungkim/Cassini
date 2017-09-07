@@ -37,7 +37,9 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //view.addSubview(imageView)
-        imageURL = DemoURL.Standford
+        
+        // Debug
+        //imageURL = DemoURL.Standford
     }
     
     // just before I am on screen. do whatever cost much, delay as much as you can. like fetchImage.
