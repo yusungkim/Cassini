@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MIz-ah-nMv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="m6a-Ph-BLR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,36 +10,22 @@
     </dependencies>
     <scenes>
         <!--Image View Controller-->
-        <scene sceneID="Kns-o0-Sql">
+        <scene sceneID="yeV-Sr-jxW">
             <objects>
-                <viewController id="MIz-ah-nMv" customClass="ImageViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m6a-Ph-BLR" customClass="ImageViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YRN-ga-aLB"/>
-                        <viewControllerLayoutGuide type="bottom" id="PxN-OZ-A5m"/>
+                        <viewControllerLayoutGuide type="top" id="12I-ne-CpW"/>
+                        <viewControllerLayoutGuide type="bottom" id="nFb-uU-vxJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XrS-eb-cv6">
+                    <view key="view" contentMode="scaleToFill" id="Rea-U4-EUS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amm-0a-DiX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="amm-0a-DiX" firstAttribute="bottom" secondItem="PxN-OZ-A5m" secondAttribute="top" id="SIF-jb-tWO"/>
-                            <constraint firstItem="amm-0a-DiX" firstAttribute="leading" secondItem="XrS-eb-cv6" secondAttribute="leading" id="b8v-uB-qdz"/>
-                            <constraint firstItem="amm-0a-DiX" firstAttribute="top" secondItem="XrS-eb-cv6" secondAttribute="top" id="qA1-aj-Mfb"/>
-                            <constraint firstAttribute="trailing" secondItem="amm-0a-DiX" secondAttribute="trailing" id="tEK-VJ-1I0"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="scrollView" destination="amm-0a-DiX" id="SWw-Pd-ru0"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F3Z-1X-ANX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vj7-oI-NuD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="136.28185907046478"/>
+            <point key="canvasLocation" x="-268" y="64"/>
         </scene>
     </scenes>
 </document>
