@@ -24,16 +24,28 @@ class CassiniViewController: UIViewController, UISplitViewControllerDelegate {
         }
     }
     
+    // set the splitVC's delegate in the very early stage.
+    // splitViewController? is a point for the splitVC who is pointing me(cassiniVC).
     func splitViewController(
         _ splitViewController: UISplitViewController,
         collapseSecondary secondaryViewController: UIViewController,
         onto primaryViewController: UIViewController
         ) -> Bool
     {
+        // check whether splitVC's master is me(cassiniVC).
         if primaryViewController.contents == self {
+            
+            // check splitVC's detail is imageVC
             if let imageVC = secondaryViewController.contents as? ImageViewController {
+                
+                // check imageVC's imageURL is set (which means have image),
+                // if not (which means the initial loading stage), collapse (which means show master view)
                 if imageVC.imageURL == nil {
-                    return true // I (cassini view controller) will do the collapse job, but actually I do nothing as result it is not going to collapse.
+                    
+                    // I (cassini view controller) will do the collapse job,
+                    // but actually I do nothing, because I dont have a code for it.
+                    // As result it is not going to collapse.
+                    return true
                 }
             }
         }
