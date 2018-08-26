@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		391C68D321325A1D001854A6 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 391C68D221325A1D001854A6 /* Lottie.framework */; };
+		391C68D621325C06001854A6 /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 391C68D221325A1D001854A6 /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		392C7DFA1F610DF0002123B0 /* CassiniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392C7DF91F610DF0002123B0 /* CassiniViewController.swift */; };
 		39D15F891F602BD400819CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D15F881F602BD400819CB8 /* AppDelegate.swift */; };
 		39D15F8E1F602BD400819CB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D15F8C1F602BD400819CB8 /* Main.storyboard */; };
@@ -16,6 +17,20 @@
 		39D15F9C1F602C6A00819CB8 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D15F9B1F602C6A00819CB8 /* ImageViewController.swift */; };
 		39D15F9E1F60327B00819CB8 /* DemoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D15F9D1F60327B00819CB8 /* DemoURL.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		391C68D721325C06001854A6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				391C68D621325C06001854A6 /* Lottie.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		391C68D221325A1D001854A6 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
@@ -100,6 +115,7 @@
 				39D15F811F602BD400819CB8 /* Sources */,
 				39D15F821F602BD400819CB8 /* Frameworks */,
 				39D15F831F602BD400819CB8 /* Resources */,
+				391C68D721325C06001854A6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
