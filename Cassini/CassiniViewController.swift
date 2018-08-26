@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class CassiniViewController: UIViewController, UISplitViewControllerDelegate {
     
@@ -14,7 +15,34 @@ class CassiniViewController: UIViewController, UISplitViewControllerDelegate {
         super.awakeFromNib()
         self.splitViewController?.delegate = self
     }
-
+    
+    private var switchOn = false
+    
+    @IBOutlet weak var lottieButton: UIButton!
+    @IBAction func lottieAction(_ sender: UIButton) {
+        lottieView?.subviews.forEach({ (view) in
+            if let animationView = view as? LOTAnimationView {
+                animationView.play()
+            }
+        })
+    }
+    
+    @IBOutlet weak var lottieView: UIView! {
+        didSet {
+            let animationView = LOTAnimationView(name: "Switch")
+            lottieView.addSubview(animationView)
+        }
+    }
+    @IBOutlet weak var lottieView2: UIView! {
+        didSet {
+            let animatedSwitch = LOTAnimatedSwitch.init(named: "HamburgerArrow")
+            animatedSwitch.setProgressRangeForOffState(fromProgress: 0.5, toProgress: 1.0)
+            animatedSwitch.setProgressRangeForOnState(fromProgress: 0, toProgress: 0.5)
+            lottieView2.addSubview(animatedSwitch)
+        }
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let url = DemoURL.NASA[segue.identifier ?? ""] {
             if let imageVC = segue.destination.contents as? ImageViewController {
